@@ -78,20 +78,17 @@ return {
   {
     "olexsmir/gopher.nvim",
     ft = "go",
-    config = function(_, _)
-      require("gopher").setup {
-        commands = {
-          go = "go",
-          gomodifytags = "gomodifytags",
-          gotests = "~/go/bin/gotests", -- also you can set custom command path
-          impl = "impl",
-          iferr = "iferr",
-        },
-      }
-      -- require("mappings").load_mappings "gopher"
+    config = function(_, opts)
+      require("gopher").setup(opts)
     end,
     build = function()
       vim.cmd [[silent! GoInstallDeps]]
+    end,
+  },
+  {
+    "karb94/neoscroll.nvim",
+    config = function()
+      require("neoscroll").setup {}
     end,
   },
 }
