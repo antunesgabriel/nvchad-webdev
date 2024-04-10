@@ -62,3 +62,5 @@ require("gopher").setup {
     iferr = "iferr",
   },
 }
+
+require("todo-comments").setup()

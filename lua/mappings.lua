@@ -12,3 +12,10 @@ map("n", "<leader>gsy", "<cmd> GoTagAdd yaml <CR>", { desc = "Add yaml struct ta
 map({ "n", "t" }, "<leader>tf", function()
   require("nvchad.term").toggle { pos = "float", id = "floatTerm" }
 end, { desc = "Terminal Toggle Floating term" })
+
+map(
+  "n",
+  "<leader>tdl",
+  "<cmd> TodoTelescope keywords=TODO,FIX,NOTE <CR>",
+  { desc = "Show comment todo, fix and note list" }
+)
