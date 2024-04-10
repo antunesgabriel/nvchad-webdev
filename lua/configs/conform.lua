@@ -11,6 +11,7 @@ local options = {
     sql = { "sqlfmt" },
     toml = { "taplo" },
     yaml = { "yamlls" },
+    prisma = { "prismaFmt" },
   },
 
   format_on_save = {
