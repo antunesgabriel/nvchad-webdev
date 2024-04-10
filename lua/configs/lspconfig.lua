@@ -10,7 +10,7 @@ local servers = {
   "gopls",
   "angularls",
   "dockerls",
-  -- "emmet_ls",
+  "emmet_ls",
   "terraformls",
   "taplo",
   "tsserver",

@@ -87,16 +87,26 @@ return {
   },
   {
     "karb94/neoscroll.nvim",
-    config = function()
-      require("neoscroll").setup {}
+    config = function(_, opts)
+      require("neoscroll").setup(opts)
     end,
   },
   {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = {},
-    config = function(_, opts)
-      require("todo-comments").setup(opts)
+    config = function()
+      require("todo-comments").setup()
     end,
+  },
+  {
+    "windwp/nvim-autopairs",
+    event = "InsertEnter",
+    -- use opts = {} for passing setup options
+    -- this is equalent to setup({}) function
+    -- opts = {},
+  },
+  {
+    "windwp/nvim-ts-autotag",
   },
 }
