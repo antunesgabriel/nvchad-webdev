@@ -19,3 +19,5 @@ map(
   "<cmd> TodoTelescope keywords=TODO,FIX,NOTE <CR>",
   { desc = "Show comment todo, fix and note list" }
 )
+
+map("n", "<leader>cl", "<cmd> noh <CR>", { desc = "Clean all highlight search" })

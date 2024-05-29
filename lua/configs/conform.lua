@@ -13,6 +13,7 @@ local options = {
     toml = { "taplo" },
     yaml = { "yamlls" },
     prisma = { "prismaFmt" },
+    python = { "mypy", "ruff", "black" },
   },
 
   format_on_save = {

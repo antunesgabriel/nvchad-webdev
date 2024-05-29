@@ -56,6 +56,10 @@ return {
         "terraform-ls",
         "typescript-language-server",
         "vue-language-server",
+        "pyright",
+        "mypy",
+        "ruff",
+        "black",
       },
     },
   },
@@ -108,5 +112,8 @@ return {
   },
   {
     "windwp/nvim-ts-autotag",
+  },
+  {
+    "norcalli/nvim-colorizer.lua",
   },
 }
