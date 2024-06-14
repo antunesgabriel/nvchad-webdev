@@ -85,28 +85,45 @@ require("colorizer").setup()
 
 require("noice").setup {
   lsp = {
-    enabled = false,
-    hover = {
-      enabled = false,
-      silent = false, -- set to true to not show a message if hover is not available
-      view = nil, -- when nil, use defaults from documentation
-      opts = {}, -- merged with defaults from documentation
-    },
-    signature = {
-      enabled = false,
-      auto_open = {
-        enabled = true,
-        trigger = true, -- Automatically show signature help when typing a trigger character from the LSP
-        luasnip = true, -- Will open signature help when jumping to Luasnip insert nodes
-        throttle = 50, -- Debounce lsp signature help request by 50ms
-      },
-      view = nil, -- when nil, use defaults from documentation
-      opts = {}, -- merged with defaults from documentation
-    },
+    -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
     override = {
       ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
       ["vim.lsp.util.stylize_markdown"] = true,
       ["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
+    },
+    hover = {
+      enabled = false,
+    },
+    signature = {
+      enabled = false,
+    },
+    message = {
+      -- Messages shown by lsp servers
+      enabled = true,
+      view = "notify",
+      opts = {},
+    },
+  },
+  routes = {
+    {
+      filter = {
+        event = "msg_show",
+        kind = "",
+        find = "written",
+      },
+      opts = { skip = true },
+    },
+  },
+  views = {
+    cmdline_popup = {
+      border = {
+        style = "none",
+        padding = { 2, 3 },
+      },
+      filter_options = {},
+      win_options = {
+        winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
+      },
     },
   },
   -- you can enable a preset for easier configuration
@@ -119,8 +136,6 @@ require("noice").setup {
   },
 
   messages = {
-    -- NOTE: If you enable messages, then the cmdline is enabled automatically.
-    -- This is a current Neovim limitation.
     enabled = false, -- enables the Noice messages UI
     view = "notify", -- default view for messages
     view_error = "notify", -- view for errors
@@ -130,11 +145,6 @@ require("noice").setup {
   },
 
   notify = {
-    -- Noice can be used as `vim.notify` so you can route any notification like other messages
-    -- Notification messages have their level and other properties set.
-    -- event is always "notify" and kind can be any log level as a string
-    -- The default routes will forward notifications to nvim-notify
-    -- Benefit of using Noice for this is the routing and consistent history view
     enabled = false,
     view = "notify",
   },

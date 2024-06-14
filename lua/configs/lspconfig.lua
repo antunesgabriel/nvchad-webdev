@@ -15,7 +15,7 @@ local servers = {
   "taplo",
   "tsserver",
   "tailwindcss",
-  "sqls",
+  "sqlls",
   "yamlls",
   "volar",
   "prismals",

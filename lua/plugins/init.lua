@@ -37,7 +37,7 @@ return {
         "prettierd",
         "sqlfmt",
         "angular-language-server",
-        "sqls",
+        "sqlls",
         "yamlfmt",
         "golines",
         "gofumpt",
@@ -121,6 +121,7 @@ return {
     event = "VeryLazy",
     opts = {
       -- add any options here
+      -- background_colour = "NotifyBackground",
     },
     dependencies = {
       -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
