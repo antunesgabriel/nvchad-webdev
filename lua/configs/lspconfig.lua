@@ -3,6 +3,10 @@ local on_attach = require("nvchad.configs.lspconfig").on_attach
 local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
+local mason_registry = require "mason-registry"
+local vue_language_server_path = mason_registry.get_package("vue-language-server"):get_install_path()
+  .. "/node_modules/@vue/language-server"
+
 local lspconfig = require "lspconfig"
 local servers = {
   "html",
@@ -37,6 +41,16 @@ lspconfig.tsserver.setup {
   on_attach = on_attach,
   on_init = on_init,
   capabilities = capabilities,
+  init_options = {
+    plugins = {
+      {
+        name = "@vue/typescript-plugin",
+        location = vue_language_server_path,
+        languages = { "vue" },
+      },
+    },
+  },
+  filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
 }
 
 -- python
@@ -46,3 +60,7 @@ lspconfig.pyright.setup {
   capabilities = capabilities,
   filetypes = { "python" },
 }
+
+-- vue
+
+lspconfig.volar.setup {}

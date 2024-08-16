@@ -14,6 +14,7 @@ local options = {
     yaml = { "yamlls" },
     prisma = { "prismaFmt" },
     python = { "mypy", "ruff", "black" },
+    vue = { "prettier" },
   },
 
   format_on_save = {
