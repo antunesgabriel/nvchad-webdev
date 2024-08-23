@@ -149,3 +149,5 @@ require("noice").setup {
     view = "notify",
   },
 }
+
+require("supermaven-nvim").setup {}
