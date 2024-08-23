@@ -151,9 +151,11 @@ require("noice").setup {
 }
 
 require("supermaven-nvim").setup {
-  -- configure supermaven
-  -- see https://github.com/davidgranstrom/supermaven#configuration
-  accept_suggestion = "<C-)>", -- Mapeia para Ctrl + )
-  clear_suggestion = "<C-]>", -- Já mapeado para Ctrl + ]
-  accept_word = "<C-j>", -- Mantém o mapeamento existente
+  keymaps = {
+    -- accept_suggestion = "<C-0>",
+    clear_suggestion = "<C-]>",
+    accept_word = "<C-j>",
+  },
 }
+
+require "configs.cmp"

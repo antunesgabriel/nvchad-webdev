@@ -134,5 +134,7 @@ return {
   },
   {
     "supermaven-inc/supermaven-nvim",
+    config = function() end,
+    lazy = true,
   },
 }
