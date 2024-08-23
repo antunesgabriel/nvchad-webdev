@@ -21,8 +21,9 @@ return {
         "stylua",
         "html-lsp",
         "css-lsp",
-        "prettier",
         "stylelint",
+        "prettier",
+        "prettierd",
         "sqlfluff",
         "sqlls",
         "yaml-language-server",
@@ -34,7 +35,6 @@ return {
         "golangci-lint",
         "css-lsp",
         "html-lsp",
-        "prettierd",
         "sqlfmt",
         "angular-language-server",
         "sqlls",
@@ -131,5 +131,11 @@ return {
       --   If not available, we use `mini` as the fallback
       "rcarriga/nvim-notify",
     },
+  },
+  {
+    "supermaven-inc/supermaven-nvim",
+    config = function()
+      require("supermaven-nvim").setup {}
+    end,
   },
 }
