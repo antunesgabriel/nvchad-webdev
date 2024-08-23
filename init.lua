@@ -150,4 +150,10 @@ require("noice").setup {
   },
 }
 
-require("supermaven-nvim").setup {}
+require("supermaven-nvim").setup {
+  -- configure supermaven
+  -- see https://github.com/davidgranstrom/supermaven#configuration
+  accept_suggestion = "<C-)>", -- Mapeia para Ctrl + )
+  clear_suggestion = "<C-]>", -- Já mapeado para Ctrl + ]
+  accept_word = "<C-j>", -- Mantém o mapeamento existente
+}
