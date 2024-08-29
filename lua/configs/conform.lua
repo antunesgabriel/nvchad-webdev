@@ -15,7 +15,7 @@ local options = {
     markdown = { { "prettierd", "prettier" } },
     lua = { "stylua" },
     go = { "goimports", "goimports-reviser", "gofumpt", "golines" },
-    sql = { "sqlfmt" },
+    sql = { "sql_formatter" },
     toml = { "taplo" },
     prisma = { "prismaFmt" },
     python = { "mypy", "ruff", "black" },
@@ -25,6 +25,12 @@ local options = {
     -- These options will be passed to conform.format()
     timeout_ms = 500,
     lsp_fallback = true,
+  },
+
+  formatters = {
+    sql_formatter = {
+      command = "sleek",
+    },
   },
 }
 
