@@ -137,4 +137,11 @@ return {
     config = function() end,
     lazy = true,
   },
+  {
+    "nvim-tree/nvim-tree.lua",
+    cmd = { "NvimTreeToggle", "NvimTreeFocus" },
+    opts = function()
+      return require "configs.nvimtree"
+    end,
+  },
 }

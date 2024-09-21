@@ -159,3 +159,5 @@ require("supermaven-nvim").setup {
 }
 
 require "configs.cmp"
+
+-- vim.g.nvimtree_side = "right"

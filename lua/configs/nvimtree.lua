@@ -1,6 +1,7 @@
 local options = {
   filters = {
     dotfiles = false,
+    custom = { "^node_modules$" },
   },
   disable_netrw = true,
   hijack_netrw = true,
@@ -13,13 +14,13 @@ local options = {
   },
   view = {
     adaptive_size = false,
-    side = "left",
-    width = 30,
+    side = "right",
+    width = 35,
     preserve_window_proportions = true,
   },
   git = {
     enable = true,
-    ignore = true,
+    ignore = false,
   },
   filesystem_watchers = {
     enable = true,
